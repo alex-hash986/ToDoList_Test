@@ -1,0 +1,114 @@
+/* Фон, визуальные состояния и детали, общие для статических и динамических элементов. */
+body {
+  background:
+    radial-gradient(ellipse at 12% 0%, #eae8ff 0%, transparent 55%),
+    radial-gradient(ellipse at 100% 50%, #f1eafe 0%, transparent 55%),
+    #f7f6fd;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.brand-icon,
+.primary-button {
+  background: linear-gradient(135deg, #4f46e5, #6d28d9);
+  box-shadow: 0 5px 12px rgb(79 70 229 / 20%);
+}
+
+.primary-button {
+  transition: filter 160ms ease, box-shadow 160ms ease;
+}
+
+.primary-button:hover {
+  filter: brightness(1.12);
+  box-shadow: 0 6px 16px rgb(79 70 229 / 30%);
+}
+
+.task-panel {
+  box-shadow: 0 20px 48px -24px rgb(63 48 138 / 26%);
+}
+
+.task-input {
+  border: 1px solid #dbe1ec;
+  background-color: #f8fafc;
+}
+
+.task-input::placeholder {
+  color: #58677b;
+}
+
+.task-input[aria-invalid="true"] {
+  border-color: #dc2626;
+}
+
+.filter-button {
+  min-height: 2.5rem;
+  padding: 0.35rem clamp(0.4rem, 2.1vw, 0.875rem);
+  border-radius: 0.55rem;
+  color: #475569;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.filter-button:hover {
+  color: #4338ca;
+}
+
+.filter-button[aria-pressed="true"] {
+  background-color: white;
+  color: #4338ca;
+  box-shadow: 0 1px 4px rgb(30 41 59 / 12%);
+}
+
+.empty-icon {
+  background: linear-gradient(145deg, #eef2ff, #f3e8ff);
+}
+
+.task-text {
+  overflow-wrap: anywhere;
+  cursor: text;
+}
+
+.task-text.is-completed {
+  text-decoration: line-through;
+  opacity: 0.68;
+}
+
+.icon-button {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: none;
+  place-items: center;
+  border-radius: 0.75rem;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.edit-button:hover {
+  color: #4338ca;
+  background-color: #eef2ff;
+}
+
+.delete-button:hover {
+  color: #be123c;
+  background-color: #fff1f2;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primary-button,
+  .filter-button,
+  .icon-button {
+    transition: none;
+  }
+}
